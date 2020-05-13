@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wormHole3001/socket-basics/issues"
   },
-  "homepage": "https://github.com/wormHole3001/socket-basics#readme"
+  "homepage": "https://github.com/wormHole3001/socket-basics#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
