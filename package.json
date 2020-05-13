@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wormHole3001/socket-basics#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "socket.io": "^1.3.7"
   }
 }
