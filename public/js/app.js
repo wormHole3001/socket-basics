@@ -4,7 +4,14 @@ var room = getQueryVariable('room');
 
 socket.on('connect', function () {
     console.log('Connected to socket.io server.');
+    socket.emit('joinRoom', {
+        name: name,
+        room: room
+    });
 });
+
+// Update H1 Tag for Room Name
+jQuery('.room-title').text(room);
 
 // Front end listen for message (callback)
 socket.on('message', function (message) {
