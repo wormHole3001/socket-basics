@@ -13,6 +13,21 @@ io.on('connection', function (socket) {
     // Used to check if client connected via socket.io
     console.log('User connected via socket.io!');
 
+    // End user disconnects
+    socket.on('disconnect', function () {
+        var userData = clientInfo[socket.id];
+        // Check if user is part of a room
+        if (typeof userData !== 'undefined') {
+            socket.leave(userData.room);
+            io.to(userData.room).emit('message', {
+                name: 'System',
+                text: userData.name + ' has left!',
+                timestamp: moment.valueOf()
+            });
+            delete clientInfo[socket.id];
+        }
+    });
+
     // End user joins room
     socket.on('joinRoom', function (req) {
         clientInfo[socket.id] = req;
