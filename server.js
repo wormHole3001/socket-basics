@@ -12,8 +12,8 @@ io.on('connection', function (socket) {
     
     socket.on('message', function (message) {
         console.log('Message Received: ' + message.text);
-        // Send message to everyone except the sender
-        socket.broadcast.emit('message', message);
+        
+        io.emit('message', message); // send message to everyone connected
     });
     // Greeting for the user once they are connected via socket.
     socket.emit('message', {
