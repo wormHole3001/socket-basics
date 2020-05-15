@@ -3,20 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <title>Computer Network Final Project</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
     </head>
     <body>
-        <a href="/index.html">Change Settings</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 card border-secondary mb-3">
+                    <a href="/index.html">Change Settings</a>
 
-        <h1 class="room-title"></h1>
+                    <h1 class="room-title"></h1>
 
-        <div class="messages">
-            <!-- Messages end up here -->
+                    <div class="messages">
+                        <!-- Messages end up here -->
+                    </div>
+
+                    <form id="message-form">
+                        <input type="text" name="message"/>
+                        <input type="submit" value="Send!"/>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <form id="message-form">
-            <input type="text" name="message"/>
-            <input type="submit" value="Send!"/>
-        </form>
 
         <script src="/js/jquery-3.5.1.min.js"></script>
         <script src="/js/socket.io-1.3.7.js"></script>
